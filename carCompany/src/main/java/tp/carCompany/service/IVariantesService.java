@@ -1,5 +1,10 @@
 package tp.carCompany.service;
 
-public interface IVariantesService {
+import java.util.List;
 
+import tp.carCompany.model.Variante;
+
+public interface IVariantesService {
+	
+	List<Variante> getVariantes();
 }

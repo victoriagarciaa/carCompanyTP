@@ -19,13 +19,9 @@ public class Variante {
 	@GeneratedValue(strategy = GenerationType.AUTO) 
 	private long id;
 	
-	@Column(name = "PrecioBasico")
-	private double precioBasico;
-	
-	@ManyToMany
-	List<Opcional> opcionales;
+	@Column(name = "Precio")
+	private double precio;
 
-	
 	public long getId() {
 		return id;
 	}
@@ -34,28 +30,18 @@ public class Variante {
 		this.id = id;
 	}
 
-	public double getPrecioBasico() {
-		return precioBasico;
+	public double getPrecio() {
+		return precio;
 	}
 
-	public void setPrecioBasico(double precioBasico) {
-		this.precioBasico = precioBasico;
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
 
-	public List<Opcional> getOpcionales() {
-		return opcionales;
-	}
-
-	public void setOpcionales(List<Opcional> opcionales) {
-		this.opcionales = opcionales;
+	@Override
+	public String toString() {
+		return "Variante [id=" + id + ", precio=" + precio + "]";
 	}
 	
 	
-	public double getPrecioFinal() {
-		return this.getPrecioBasico() + this.getPrecioOpcionales();
-	}
-	
-	public double getPrecioOpcionales() {
-		return opcionales.stream().mapToDouble(o -> o.getPrecio()).sum();
-	}
 }

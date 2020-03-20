@@ -15,7 +15,7 @@ public class Opcional {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column(name="precio")
+	@Column(name="Precio")
 	private double precio;
 
 	
@@ -33,6 +33,11 @@ public class Opcional {
 
 	public void setPrecio(double precio) {
 		this.precio = precio;
+	}
+
+	@Override
+	public String toString() {
+		return "Opcional [id=" + id + ", precio=" + precio + "]";
 	}
 	
 	
