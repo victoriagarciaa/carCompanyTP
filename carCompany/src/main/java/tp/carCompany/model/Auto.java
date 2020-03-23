@@ -20,10 +20,12 @@ public class Auto {
 	private long id;
 
 	@ManyToOne
-	private Opcional opcional;
+	private Variante variante;
 
 	@ManyToMany
-	List<Variante> variantes;
+	List<Opcional> opcionales;
+
+
 
 	public long getId() {
 		return id;
@@ -33,30 +35,30 @@ public class Auto {
 		this.id = id;
 	}
 
-	public Opcional getOpcional() {
-		return opcional;
+	public Variante getVariante() {
+		return variante;
 	}
 
-	public void setOpcional(Opcional opcional) {
-		this.opcional = opcional;
+	public void setVariante(Variante variante) {
+		this.variante = variante;
 	}
 
-	public List<Variante> getVariantes() {
-		return variantes;
+	public List<Opcional> getOpcionales() {
+		return opcionales;
 	}
 
-	public void setVariantes(List<Variante> variantes) {
-		this.variantes = variantes;
+	public void setOpcionales(List<Opcional> opcionales) {
+		this.opcionales = opcionales;
 	}
 
 	
 	public double getCostoFinal() {
-		return opcional.getPrecio() + this.getCostoVariantes();
+		return variante.getPrecio() + this.getCostoOpcionales();
  	}
 	
-	public double getCostoVariantes() {
-		if(!variantes.isEmpty()) {
-			return variantes.stream().mapToDouble(v->v.getPrecio()).sum();
+	public double getCostoOpcionales() {
+		if(!opcionales.isEmpty()) {
+			return opcionales.stream().mapToDouble(o->o.getPrecio()).sum();
 		}
 		return 0;
 	}

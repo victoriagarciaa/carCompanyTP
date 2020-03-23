@@ -17,6 +17,8 @@ public class Opcional {
 
 	@Column(name="Precio")
 	private double precio;
+	
+	//private enum nombre;
 
 	
 	public long getId() {
