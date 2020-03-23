@@ -3,9 +3,11 @@ package tp.carCompany.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import tp.carCompany.model.Opcional;
 
 
-public interface OpcionalesRepository extends JpaRepository<tp.carCompany.model.Opcional, Long> {
+
+public interface OpcionalesRepository extends JpaRepository<Opcional, Long> {
 	
 	
 	

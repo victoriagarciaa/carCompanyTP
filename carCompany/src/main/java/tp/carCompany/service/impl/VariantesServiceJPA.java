@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tp.carCompany.model.Opcional;
 import tp.carCompany.model.Variante;
@@ -11,6 +12,7 @@ import tp.carCompany.repository.OpcionalesRepository;
 import tp.carCompany.service.IOpcionalesService;
 import tp.carCompany.service.IVariantesService;
 
+@Service
 public class VariantesServiceJPA implements IVariantesService {
 	
 	private List<Variante> variantes = null;
